@@ -1,0 +1,644 @@
+/* ---------------------------- 
+
+Created By Ramkumar .M
+
+1.Global
+     1.1 Root Colours
+     1.2 Font Initialize
+     1.3 ScrollBar Change
+     1.4 Background ScrollLock
+     1.5 ScrollDown Text
+     1.6 Progress Navbar
+
+2.Navigation Menu
+     2.1 Navbar Main
+     2.2 Navbar Mobile
+
+3 Sections 
+     3.1 Home
+     3.2 About
+     3.3 Education
+
+ ---------------------------- */
+
+/* ------------------------------
+          1.Global 
+------------------------------ */
+
+/* 1.1 Root Colours */
+:root {
+  /* --naples-yellow: hsla(37, 95%, 55%, 1); */
+  --dark-gray: hsla(162, 7%, 45%, 1);
+  --gray: hsla(76, 4%, 50%, 1);
+  --isabelline: hsla(340, 100%, 99%, 1);
+  --shadow: #000;
+  --naples-yellow: hsla(47, 92%, 70%, 1);
+}
+
+/* 1.2 Font Initialize */
+
+@font-face {
+  font-family: Circular;
+  src: url("./assets/fonts/CircularStdBook.otf") format("opentype");
+}
+
+body {
+  font-family: Circular;
+  overflow-y: hidden;
+  color: var(--isabelline);
+}
+
+/* 1.3 ScrollBar Change */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background: var(--naples-yellow);
+}
+
+::selection {
+  background-color: var(--naples-yellow);
+  color: var(--shadow);
+}
+
+-webkit-::selection {
+  background-color: var(--naples-yellow);
+  color: var(--shadow);
+}
+
+::-moz-selection {
+  background-color: var(--naples-yellow);
+  color: var(--shadow);
+}
+
+/* 1.4 Background Scroll Lock */
+
+.menu-opened {
+  overflow: hidden;
+}
+
+.body-lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu-opened .body-lock {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 1.5 ScrollDown Text */
+.scrollDown {
+  position: fixed;
+  bottom: 80px;
+  right: 0rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  line-height: 1;
+  letter-spacing: 5px;
+  z-index: 110;
+  transition: 0.3s;
+}
+.scrollDown.white-bg {
+  color: var(--shadow);
+}
+.scrollDown.white-bg::after {
+  background-color: var(--shadow);
+}
+
+.scrollDown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -80px;
+  margin: auto;
+  width: 2px;
+  height: 72px;
+  background-color: var(--isabelline);
+}
+
+/* 1.6 Progress Navbar */
+
+.progress-nav {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 1.5rem;
+  transform: translate(0, -50%);
+}
+
+@media (min-width: 992px) {
+  .progress-nav {
+    right: 3rem;
+  }
+  .scrollDown {
+    right: 1.5rem;
+  }
+}
+
+.progress-nav li {
+  position: relative;
+  width: 3px;
+  height: 30px;
+  /* margin-bottom: 30px; */
+  transition: background-color 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  background-color: var(--shadow);
+}
+
+.progress-nav li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--naples-yellow);
+  display: block;
+  transition: 0.3s;
+}
+
+.progress-nav li::before {
+  height: 30px;
+}
+
+.progress-nav li.active ~ li::before {
+  background-color: var(--isabelline);
+}
+
+.progress-nav-white li.active ~ li::before {
+  background-color: var(--shadow);
+}
+
+section {
+  background-position: 50%;
+  background-size: cover;
+}
+
+/* ------------------------------
+          2.Navigation Menu 
+------------------------------ */
+
+/* 2.1 Navbar main */
+.navbar {
+  position: absolute;
+  padding: 0 3rem;
+  width: 100%;
+  z-index: 10;
+  transition: 0.4s;
+}
+
+#logo {
+  width: 120px;
+  height: 120px;
+}
+
+.menu{
+  /* display: inline-block; */
+  position: absolute;
+  right: -1.6rem;
+  top: 34px;
+  background: none;
+  border: 0;
+  padding: 0.3rem 0;
+}
+
+.navbar-main.navbar-main-white #logo,
+.navbar-main.navbar-main-white #menuIcon {
+  fill: var(--shadow);
+}
+
+/* 2.2 Navbar Mobile */
+
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--isabelline);
+  padding: 3.9rem 2.6rem 1.3rem 4.4rem;
+  transform: translateX(100%);
+  overflow-x: auto;
+  transition: 0.3s;
+  z-index: 110;
+}
+
+.nav-mobile .close {
+  position: absolute;
+  top: 1.3rem;
+  right: 2.5rem;
+}
+
+.navbar-nav-mobile {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 6rem;
+  margin-top: 2rem;
+}
+
+.navbar-nav-mobile a {
+  text-decoration: none;
+  color: var(--gray);
+  transition: 0.3s;
+}
+
+.navbar-nav-mobile .active a {
+  color: var(--naples-yellow);
+}
+
+.menu-opened .nav-mobile {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 576px) {
+  .nav-mobile {
+    width: 50%;
+    max-width: 32rem;
+  }
+}
+
+/* ------------------------------
+          3.Section 
+------------------------------ */
+
+section:not(#home) .intro {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.7s;
+}
+section:not(#home) .intro.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.pp-scrollable {
+  padding: 0;
+  overflow-x: hidden;
+}
+.pp-scrollable .intro {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+.pp-scrollable .intro::before {
+  content: "";
+  display: inline-block;
+  height: 100vh;
+  vertical-align: middle;
+}
+.pp-scrollable .wrap {
+  width: 100%;
+  white-space: normal;
+  position: relative;
+  display: inline-block;
+  padding: 8rem 0 6rem;
+  vertical-align: middle;
+}
+
+/* 3.1 Home */
+
+#home {
+  background-image: url("./assets/images/ram.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow-y: hidden;
+}
+
+#home .container {
+  height: 100%;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.title::before {
+  content: "<";
+}
+
+.title::after {
+  content: "/>";
+}
+
+.title::before,
+.title::after {
+  color: var(--naples-yellow);
+}
+
+.text-white {
+  margin-top: 26px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.text-highlight {
+  color: var(--naples-yellow);
+}
+
+
+@media screen and (min-width:576px) {
+  h1{
+    font-size: 4.5rem;
+  }
+}
+
+/* 3.2 About */
+
+#about {
+  background-color: var(--isabelline);
+  color: var(--shadow);
+}
+
+.btn {
+  border: 1px solid var(--naples-yellow);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  color: var(--gray);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--naples-yellow);
+  transform: scaleY(1);
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem var(--naples-yellow);
+}
+
+.text-intro {
+  font-size: 1.5rem;
+}
+
+.navbar-is-white .text-highlight {
+  background-color: var(--naples-yellow);
+  color: var(--shadow);
+}
+
+.social-icons {
+  display: inline-block;
+}
+
+.social-icons a {
+  text-decoration: none;
+  margin-right: 14px;
+  margin-top: 10px;
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+}
+
+.profile {
+  padding: 0.5rem;
+  border: 2px solid var(--naples-yellow);
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  border: 2px solid var(--naples-yellow);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.pp-section.active .profile::before {
+  transform: rotate(-6deg);
+  transition-delay: 1s;
+}
+
+.pp-section.active .profile::after {
+  transform: rotate(7deg);
+  transition-delay: 1s;
+}
+
+.profile::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  border: 2px solid var(--naples-yellow);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.profile img {
+  box-shadow: 0 5px 15px 5px rgba(16 16 16 10%);
+}
+
+/* 3.3 Education */
+
+#education {
+  /* background-color: #D3FFF3; */
+  color: var(--shadow);
+  background-color: var(--isabelline);
+}
+
+.progress {
+  position: relative;
+  height: 6px;
+  border-radius: 0;
+  background-color: var(--shadow);
+}
+
+.progress-item h6 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.progress-bar {
+  position: relative;
+  background: transparent;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: var(--naples-yellow);
+}
+
+.active .progress-bar::before {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.progress-item:nth-child(odd) .progress-bar:before {
+  transition-delay: 800ms;
+}
+.progress-item:nth-child(even) .progress-bar:before {
+  transition-delay: 800ms;
+}
+
+.certificate {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.badges a {
+  text-decoration: none;
+  margin-right: 14px;
+  margin-top: 10px;
+}
+
+.badges a img {
+  width: 30px;
+  height: 30px;
+}
+
+#projects {
+  /* background-color: #D3FFF3; */
+  color: var(--isabelline);
+}
+
+.section-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow-y: hidden;
+}
+
+.project-container {
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+}
+
+.bg-change {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-change .section-bg {
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.5s 0.2s ease, transform 5s 0.2s ease;
+}
+
+.bg-change .section-bg:first-child {
+  opacity: 1;
+}
+
+.bg-change .active {
+  opacity: 1;
+}
+
+.project-box {
+  display: block;
+  position: relative;
+  padding-bottom: 35%;
+  border: 1px solid var(--isabelline);
+  margin-top: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: var(--isabelline);
+  text-transform: uppercase;
+}
+
+.project-box:hover,
+.project-box:hover .project-stack {
+  color: var(--shadow);
+}
+.project-box:hover {
+  background-color: var(--naples-yellow);
+}
+
+.project-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+}
+
+.project-box h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-stack {
+  color: #cccccc;
+  margin-top: 0.6rem;
+  transition: 0.3s;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 576px) {
+  .project-box {
+    padding-bottom: 65%;
+  }
+  .project-stack {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+  }
+}

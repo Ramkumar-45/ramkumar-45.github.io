@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Ramkumar - Full Stack Developer</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+     <link rel="stylesheet" href="./assets/pagePiling.js/dist/jquery.pagepiling.css">
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <div class="body-lock"></div>
+
+     <p class="scrollDown">SCROLLDOWN</p>
+     <nav class="navbar navbar-expand-lg navbar-main">
+          <div class="position-relative w-100">
+               <a class="navbar-brand">
+                    <svg width="357" height="99" viewBox="0 0 357 99" fill="#f3ecec" id="logo"
+                         xmlns="http://www.w3.org/2000/svg">
+                         <path
+                              d="M0.69099 70.8122H12.307L18.547 41.5802H22.771L22.579 70.8122H34.339L34.051 36.6362C36.067 35.6442 37.891 34.0442 39.523 31.8362C41.187 29.6282 42.499 27.0682 43.459 24.1562C44.451 21.2122 44.947 18.2202 44.947 15.1802C44.947 11.4362 44.259 8.54016 42.883 6.49216C41.539 4.44416 39.859 2.98816 37.843 2.12416C35.859 1.22816 33.891 0.700159 31.939 0.540159C29.987 0.348162 28.419 0.252163 27.235 0.252163H15.667L0.69099 70.8122ZM20.707 31.2122L25.123 10.5242C28.067 10.5242 30.131 11.0842 31.315 12.2042C32.531 13.3242 33.139 15.3562 33.139 18.3002C33.139 22.7482 32.003 26.0122 29.731 28.0922C27.459 30.1722 24.451 31.2122 20.707 31.2122ZM37.5932 70.8122H48.8732L54.1532 56.4122H67.0652L66.5372 70.8122H77.8172L79.8812 0.252163H65.4332L37.5932 70.8122ZM58.4252 45.4682L66.4412 25.4522L67.4492 22.8602H68.2652L68.1212 25.4522L67.6892 45.4682H58.4252ZM83.0035 70.8122H93.8035L104.315 20.7002L105.131 16.8602H105.995L105.755 21.0362L103.787 70.8122H108.251L127.547 21.0362L128.939 16.8602H129.755L128.843 21.3242L118.331 70.8122H129.083L144.059 0.252163H129.371L115.019 31.9802L113.291 37.1162H113.003L113.339 31.9802L112.715 0.252163L97.9795 0.252163L83.0035 70.8122ZM137.753 70.8122H149.513L154.025 49.5002L159.497 41.1482L160.697 39.4202H161.129L161.177 40.7642L163.337 70.8122H174.617L172.025 22.1402L187.577 0.252163H176.297L160.313 25.7882L159.257 27.2282H158.681L159.017 25.7402L164.489 0.252163H152.729L137.753 70.8122ZM195.927 71.5802C199.159 71.5802 202.135 70.9082 204.855 69.5642C207.575 68.1882 209.863 66.3162 211.719 63.9482C213.607 61.5482 214.871 58.8282 215.511 55.7882L227.223 0.252163H215.607L203.799 55.7882C203.447 57.4842 202.743 58.8602 201.687 59.9162C200.663 60.9722 199.431 61.5002 197.991 61.5002C196.615 61.5002 195.655 60.9722 195.111 59.9162C194.599 58.8602 194.519 57.4842 194.871 55.7882L206.631 0.252163H195.015L183.159 55.7882C182.167 60.3962 182.839 64.1882 185.175 67.1642C187.543 70.1082 191.127 71.5802 195.927 71.5802ZM220.816 70.8122H231.616L242.128 20.7002L242.944 16.8602H243.808L243.568 21.0362L241.6 70.8122H246.064L265.36 21.0362L266.752 16.8602H267.568L266.656 21.3242L256.144 70.8122H266.896L281.872 0.252163H267.184L252.832 31.9802L251.104 37.1162H250.816L251.152 31.9802L250.528 0.252163H235.792L220.816 70.8122ZM272.062 70.8122H283.342L288.622 56.4122H301.534L301.006 70.8122H312.286L314.35 0.252163H299.902L272.062 70.8122ZM292.894 45.4682L300.91 25.4522L301.918 22.8602H302.734L302.59 25.4522L302.158 45.4682H292.894ZM317.472 70.8122H329.088L335.328 41.5802H339.552L339.36 70.8122H351.12L350.832 36.6362C352.848 35.6442 354.672 34.0442 356.304 31.8362C357.968 29.6282 359.28 27.0682 360.24 24.1562C361.232 21.2122 361.728 18.2202 361.728 15.1802C361.728 11.4362 361.04 8.54016 359.664 6.49216C358.32 4.44416 356.64 2.98816 354.624 2.12416C352.64 1.22816 350.672 0.700159 348.72 0.540159C346.768 0.348162 345.2 0.252163 344.016 0.252163H332.448L317.472 70.8122ZM337.488 31.2122L341.904 10.5242C344.848 10.5242 346.912 11.0842 348.096 12.2042C349.312 13.3242 349.92 15.3562 349.92 18.3002C349.92 22.7482 348.784 26.0122 346.512 28.0922C344.24 30.1722 341.232 31.2122 337.488 31.2122Z" />
+                    </svg>
+               </a>
+               <button class="menu">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="#f3ecec" id="menuIcon"
+                         xmlns="http://www.w3.org/2000/svg">
+                         <path d="M21 18H9V16H21V18ZM21 13H3V11H21V13ZM21 8H9V6H21V8Z" />
+                    </svg>
+               </button>
+          </div>
+     </nav>
+     <nav class="navbar nav-mobile">
+          <div class="close">
+               <img src="./assets/images/close.svg" width="50" height="50" alt="">
+          </div>
+          <ul class="navbar-nav navbar-nav-mobile">
+               <li data-menuanchor="home" class="active">
+                    <a href="#home" class="nav-link">Home</a>
+               </li>
+               <li data-menuanchor="about">
+                    <a href="#about" class="nav-link">About</a>
+               </li>
+               <li data-menuanchor="education">
+                    <a href="#education" class="nav-link">Education</a>
+               </li>
+               <li data-menuanchor="projects">
+                    <a href="#projects" class="nav-link">Projects</a>
+               </li>
+               <!--<li>
+                    <a href="" class="nav-link">Projects</a>
+               </li> -->
+          </ul>
+     </nav>
+     <main>
+          <div id="fullpage">
+               <section id="home" class="section pp-scrollable">
+                    <div class="intro">
+                         <div class="wrap">
+                              <div class="container">
+                                   <div class="row align-items-center h-100">
+                                        <div class="col-lg-6 col-xl-5">
+                                             <div class="mb-3 text-title">
+                                                  <h6 class="title">Full Stack Developer</h6>
+                                             </div>
+                                             <h1 class="text-white">
+                                                  <span class="text-highlight">Hello, </span>my name is Ramkumar.
+                                             </h1>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <section id="about" class="section navbar-is-white pp-scrollable">
+                    <div class="intro">
+                         <div class="wrap">
+                              <div class="container">
+                                   <div class="row align-items-center h-100">
+                                        <div class="col-md-6 pr-md-5 mb-5">
+                                             <div class="mb-2 text-title">
+                                                  <h2 class="title">About me</h2>
+                                             </div>
+                                             <p class="text-intro mt-3">
+                                                  <span class="text-highlight">A self-taught learner.</span> Born in
+                                                  Thoothukudi in 2000.I have completed my B.E Computer Science Engg. in
+                                                  May 2021. Now I am a Full Stack Developer, I learned all things in
+                                                  myself
+                                             </p>
+                                             <div class="social-icons">
+                                                  <a href="javascript:void(0)">
+                                                       <img src="./assets/images/instagram.svg" alt="instagram">
+                                                  </a>
+                                                  <a href="https://www.linkedin.com/in/ramkumar-m-14887414b/"
+                                                       target="_blank">
+                                                       <img src="./assets/images/linkedin.svg" alt="linkedin">
+                                                  </a>
+                                                  <a href="https://github.com/Ramkumar-45" target="_blank">
+                                                       <img src="./assets/images/github.svg" alt="github">
+                                                  </a>
+                                             </div>
+                                             <div class="form-group mt-5">
+                                                  <a href="./assets/M.Ramkumar Resume.pdf" class="btn"
+                                                       download="Resume.pdf">Download CV</a>
+                                             </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5 px-md-5 pt-3 offset-xl-1">
+                                             <div class="position-relative profile">
+                                                  <img src="./assets/images/profile.jpeg" class="img-fluid w-100"
+                                                       alt="">
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                    </div>
+               </section>
+               <section id="education" class="section navbar-is-white pp-scrollable">
+                    <div class="intro">
+                         <div class="wrap">
+                              <div class="container">
+                                   <div class="mb-5 text-title">
+                                        <h6 class="title">SkillSet</h6>
+                                   </div>
+                                   <div class="row align-items-center h-100">
+                                        <div class="col-lg-6">
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6 col-sm-3">
+                                                            HTML/CSS
+                                                       </h6>
+                                                       <h6 class="col-md-6 col-sm-3 text-right">
+                                                            75%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 75%"
+                                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6">
+                                                            Javascript
+                                                       </h6>
+                                                       <h6 class="col-md-6 text-right">
+                                                            60%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 60%"
+                                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6">
+                                                            Bootstrap
+                                                       </h6>
+                                                       <h6 class="col-md-6 text-right">
+                                                            65%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 65%"
+                                                            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6">
+                                                            Python
+                                                       </h6>
+                                                       <h6 class="col-md-6 text-right">
+                                                            55%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 55%"
+                                                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
+
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6">
+                                                            Django
+                                                       </h6>
+                                                       <h6 class="col-md-6 text-right">
+                                                            50%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6">
+                                                            NodeJS
+                                                       </h6>
+                                                       <h6 class="col-md-6 text-right">
+                                                            45%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 45%"
+                                                            aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6">
+                                                            ExpressJS
+                                                       </h6>
+                                                       <h6 class="col-md-6 text-right">
+                                                            50%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="progress-item">
+                                                  <div class="row">
+                                                       <h6 class="col-md-6">
+                                                            ReactJS
+                                                       </h6>
+                                                       <h6 class="col-md-6 text-right">
+                                                            40%
+                                                       </h6>
+                                                  </div>
+
+                                                  <div class="progress mb-5">
+                                                       <div class="progress-bar" role="progressbar" style="width: 40%"
+                                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="row">
+                                        <div class="col-md-6">
+                                             <h6 class="certificate">Certification Earned</h6>
+                                             <div class="badges">
+                                                  <a href="https://www.hackerrank.com/certificates/a23d77d8ba49">
+                                                       <img src="./assets/images/badge1.svg" data-toggle='tooltip'
+                                                            data-placement='top' title="NodeJS from HackerRank"
+                                                            alt="badge1">
+                                                  </a>
+                                                  <a
+                                                       href="https://www.freecodecamp.org/certification/fcc8a70404a-2cc3-4897-a5dd-af9d7be7b93f/responsive-web-design">
+                                                       <img src="./assets/images/badge2.svg" data-toggle='tooltip'
+                                                            data-placement='top'
+                                                            title="Responsive Web Design from Freecodecamp"
+                                                            alt="badge2">
+                                                  </a>
+
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <section id="projects" class="section pp-scrollable">
+                    <div class="project-container">
+                         <div class="bg-change">
+                              <div class="section-bg" style="background-image: url('./assets/images/bg1.jpg');"></div>
+                              <div class="section-bg" style="background-image: url('./assets/images/bg2.jpg');"></div>
+                              <div class="section-bg" style="background-image: url('./assets/images/bg3.jpg');"></div>
+                         </div>
+                         <div class="intro">
+                              <div class="wrap">
+                                   <div class="container">
+                                        <div class="mb-5 text-title">
+                                             <h6 class="title">Projects</h6>
+                                        </div>
+                                        <div class="row align-items-center h-100">
+                                             <div class="col-md-6 col-lg-3">
+                                                  <a class="project-box">
+                                                       <div class="project-inner">
+                                                            <h4>Covid Case Tracker</h4>
+                                                            <p class="project-stack">
+                                                                 Pure javascript and API
+                                                            </p>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                             <div class="col-md-6 col-lg-3">
+                                                  <a class="project-box">
+                                                       <div class="project-inner">
+                                                            <h4>Weather Forecasting</h4>
+                                                            <p class="project-stack">
+                                                                 Django and API
+                                                            </p>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                             <div class="col-md-6 col-lg-3">
+                                                  <a class="project-box">
+                                                       <div class="project-inner">
+                                                            <h4>CRUD Operations</h4>
+                                                            <p class="project-stack">
+                                                                 Django and NodeJS
+                                                            </p>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                             <div class="col-md-6 col-lg-3">
+                                                  <a class="project-box">
+                                                       <div class="project-inner">
+                                                            <h4>Student Management System</h4>
+                                                            <p class="project-stack">
+                                                                 Django
+                                                            </p>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                        </div>
+
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+          </div>
+
+
+
+     </main>
+
+     <div class="progress-nav">
+          <ul class="navbar-nav" id="prog">
+               <li data-menuanchor="home" class="active"><a href="#home"></a></li>
+               <li data-menuanchor="about"><a href="#about"></a></li>
+               <li data-menuanchor="education"><a href="#education"></a></li>
+               <li data-menuanchor="projects"><a href="#projects"></a></li>
+          </ul>
+     </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+          integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+          crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+          integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+          crossorigin="anonymous"></script>
+     <script src="./assets/pagePiling.js/dist/jquery.pagepiling.min.js"></script>
+     <script src="./main.js"></script>
+</body>
+
+</html>
